@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Staff-Manager": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Staff-Manager"
+    }
+  },
+  "defaultProject": "Staff-Manager",
+  "cli": {
+    "analytics": "7747922d-f802-4ffd-a985-e389f630f635"
+  }
 }
