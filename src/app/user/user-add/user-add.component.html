@@ -1,0 +1,53 @@
+<form [formGroup]="createUserForm" (ngSubmit)="onSubmit(createUserForm)">
+  <div class="form-group">
+    {{ createUserForm.value | json}}
+    <label >Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label >Address</label>
+    <input type="text" class="form-control" formControlName="address" >
+    <div *ngIf="address.invalid && (address.dirty || address.touched)"
+         class="alert alert-danger">
+      <div *ngIf="address.errors.required">
+        Address is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label >Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+         class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="email.errors.email">
+        Email invalid
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label >phone</label>
+    <input type="number" class="form-control" formControlName="phone" >
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+         class="alert alert-danger">
+      <div *ngIf="phone.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="phone.errors.minlength">
+        Name must be at least 8 characters long.
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled] = "createUserForm.invalid">Submit</button>
+</form>
